@@ -21,7 +21,7 @@ module.exports = async function (context, req) {
 
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: result
+        body: { result }
     };
 }
 
@@ -47,7 +47,7 @@ async function analyzeImage(img){
                 'Ocp-Apim-Subscription-Key': subscriptionKey
             }
         })
-    let data = resp.json();
+    let data = await resp.json();
     return data;
 }
 
