@@ -7,9 +7,14 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "awesome-dev-jokes": "^1.0.3",
     "morse-code-converter": "^1.0.2",
     "node-fetch": "^2.6.1",
-    "parse-multipart": "^1.0.4"
+ 
+    "parse-multipart": "^1.0.4",
+    "pig-latin": "^2.0.2"
+
+     
   },
   "devDependencies": {},
   "main": "index.js",
