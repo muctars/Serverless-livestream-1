@@ -30,8 +30,8 @@ module.exports = async function (context, req) {
 
         responseMessage = await uploadFile(parsedBody, ext, password);
     } catch(err){
-        context.log("Undefined body image")
-        responseMessage = "Sorry! No image attached";
+        context.log("Undefined body image");
+        responseMessage = "Sorry! No image attached.";
     }
     context.res = {
         // status: 200, /* Defaults to 200 */
