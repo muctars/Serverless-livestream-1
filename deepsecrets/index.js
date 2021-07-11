@@ -19,7 +19,7 @@ module.exports = async function (context, req) {
     let message = queryObject.Body;
     let document = {"message" : message};
     let items = await createDocument(document);
-    const random_value = Math.floor(items.length * Math.random());
+    let random_value = Math.floor(items.length * Math.random());
     const responseMessage = `Thanks 😊! Stored your secret "${message}". 😯 Someone confessed that: ${JSON.stringify(items[random_value].message)}`
 
     context.res = {
