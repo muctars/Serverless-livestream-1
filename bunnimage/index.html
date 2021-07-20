@@ -8,11 +8,11 @@
   </head>
   <body>
       <div>
-              <h1 id="h1">Give your code some love ❤️</h1>
-              <form>
-                  <label>Code: </label>
-                  <input type="text" id="name" name="name" /><br>
-                  <input onClick="getImage()" value="Submit" type="button" />
+              <h1 id="h1">Bunnimage ❤️</h1>
+              <form id="myform" onsubmit="getImage(event) "enctype="multipart/form-data">
+                <input type="file" accept="image/x-png,image/jpeg" name="image"></input>
+                <input id="name" type="text"  placeholder="Enter your file's name">
+                <input type="submit" />
               </form>
               <br/>
               <div id="output"></div>
