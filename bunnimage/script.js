@@ -5,11 +5,11 @@ function getImage (event) {
     
     let nameInput = document.getElementById('name');
     let fileInput = document.getElementById('image');
-    const file = fileInput.files[0]; // fileInput is the file upload input element
+    const file = fileInput.files[0];
 
     let payload = new FormData(bunniForm);
     console.log(payload)
-    
+     // fileInput is the file upload input element
     payload.append("file", file);
     $('#output').text("Thanks!")
 
@@ -29,16 +29,40 @@ function getImage (event) {
                 },
                 body: payload
         })
+        console.log("POST request was make successfully.")
         $('#output').text("Your image has been stored successfully!");
         } catch(err){
             $("#output").text(err);
         }
-
-        
     } else {
         alert("No name error.");
     }
+}
 
-    
-    
+async function downloadImage() {
+  let username = document.getElementById("downloadusername").value
+  
+  if(document.getElementById("downloadusername").value != ""){
+    try{
+      let url = "https://emotionalmultiparse.azurewebsites.net/api/bunnimage-download";
+    fetch(url, {
+      headers: {
+        "username": username
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      console.log(data);
+      console.log(data.downloadUri);
+      window.open(data.downloadUri, "_self")
+      });
+  }
+    catch(err){
+      alert(err);
+    }
+  } else {
+    alert("No name error.");
+  }
 }
