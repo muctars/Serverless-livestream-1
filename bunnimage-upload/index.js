@@ -1,16 +1,16 @@
 const multipart = require('parse-multipart');
+const fetch = require('node-fetch');
+
 const connectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
 const { BlobServiceClient } = require("@azure/storage-blob");
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-
     let responseMessage = "";
 
     try{
         let password = req.headers['codename'];; // this will be the codename
-
 
         let boundary = multipart.getBoundary(req.headers['content-type']);
         let body = req.body;
@@ -27,7 +27,6 @@ module.exports = async function (context, req) {
             username = "invalidimage"
             ext = "";
         }
-
         responseMessage = await uploadFile(parsedBody, ext, password);
     } catch(err){
         context.log("Undefined body image");
