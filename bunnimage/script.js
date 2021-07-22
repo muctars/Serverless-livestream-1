@@ -5,14 +5,15 @@ function getImage (event) {
     
     let nameInput = document.getElementById('name');
     let fileInput = document.getElementById('image');
+    const file = fileInput.files[0]; // fileInput is the file upload input element
 
     let payload = new FormData(bunniForm);
     console.log(payload)
-    const file = fileInput.files[0]; // fileInput is the file upload input element
+    
     payload.append("file", file);
     $('#output').text("Thanks!")
 
-    let url = "https://emotionalmultiparse.azurewebsites.net/api/bunnimage-upload"
+    
     if (document.getElementById("name").value != "") {
 
         try{
@@ -28,7 +29,7 @@ function getImage (event) {
                 },
                 body: payload
         })
-        $('output').text("Your image has been stored successfully!");
+        $('#output').text("Your image has been stored successfully!");
         } catch(err){
             $("#output").text(err);
         }
