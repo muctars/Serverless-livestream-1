@@ -3,7 +3,7 @@ function getImage (event) {
     let bunniForm = document.getElementById("myform");
     // get image upload by user via the form, saved in payload
     
-    let nameInput = document.getElementById('name');
+    let nameInput = document.getElementById('username');
     let fileInput = document.getElementById('image');
     const file = fileInput.files[0];
 
