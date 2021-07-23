@@ -22,7 +22,7 @@ module.exports = async function (context, req) {
     let name4 = req.query.name4;
 
     async function getCat(name){
-        let endpoint = "https://cataas.com/cat/cute/says/Bitcamp" + name;
+        let endpoint = "https://cataas.com/cat/cute/says/" + name;
 
         let resp = await fetch(endpoint, {
         method: 'GET'
