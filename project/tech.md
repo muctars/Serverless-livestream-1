@@ -35,4 +35,4 @@
 
 ### Flowchart
 
-![Picture of my project flowchart](./flowchart.png)
+![Picture of my project flowchart](./Flowchart.png)
